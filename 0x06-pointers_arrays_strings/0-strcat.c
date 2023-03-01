@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * _strcat - Entry point.
  * @dest: Variable which will hold the string.
