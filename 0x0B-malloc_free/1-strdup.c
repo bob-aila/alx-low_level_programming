@@ -1,46 +1,57 @@
-#include "main.h"
+#include <stdio.h>
+		
 #include <stdlib.h>
-
+		
+#include "main.h"
+		
 /**
- * _strdup - a function to copy a string on a new allocated memory area .
- * @str: string to copy
- *
- * Return: a pointer to the copied string .
+		
+ * _strdup - duplicate to new memory space location
+		
+ * @str: char
+		
+ * Return: 0
+		
  */
-
+		
 char *_strdup(char *str)
+		
 {
-char *pointeur;
-int i;
-int count = 0;
+		
+	char *aaa;
+		
+	int i, r = 0;
+		
 
-/* if the given string is NULL*/
-if (str == NULL)
-	return (NULL);
-
-/* to finf the length of the given string*/
-while (*(str + count))
-
-	count++;
-/*allocating needed dynamic memory*/
-pointeur = malloc(sizeof(char) * (count + 1));
-
-
-/* verifying if the pointer , pointed on the allocated memory area is not NULL */
-if (pointeur == NULL)
-	return (NULL);
-
-/* initializing i to avoid segment fault error*/
-i = 0;
-
-/* filling the allocated area with the bytes from the given string */
-while (i <= count)
-{
-	*(pointeur + i) = *(str + i);
+		
+	if (str == NULL)
+		
+		return (NULL);
+		
+	i = 0;
+		
+	while (str[i] != '\0')
+		
 		i++;
-}
+		
 
-/* return a pointer to the string */
-return (pointeur);
-}
+		
+	aaa = malloc(sizeof(char) * (i + 1));
+		
 
+		
+	if (aaa == NULL)
+		
+		return (NULL);
+		
+
+		
+	for (r = 0; str[r]; r++)
+		
+		aaa[r] = str[r];
+		
+
+		
+	return (aaa);
+		
+}
